@@ -1,0 +1,67 @@
+.innerContent {
+    width: 1200px;
+    margin: 100px auto;
+}
+
+.calcWrapper {
+    display: flex;
+    flex-direction: column;
+    width: 840px;
+    margin: 0 auto;
+}
+
+.commandBlock {
+    display: flex;
+    margin-bottom: 20px;
+}
+
+.inputOutputBlock {
+    display: flex;
+    justify-content: space-between;
+}
+
+.commandInputWrapper {
+    display: flex;
+    flex-direction: column;
+    margin-right: 40px;
+}
+
+.btn {
+    border: none;
+    background-color: lightblue;
+    border-radius: 10px;
+    height: 29px;
+    align-self: flex-end;
+    padding: 4px 20px;
+    cursor: pointer;
+
+    &:hover {
+        background-color: darken(lightblue, 10%);
+    }
+}
+
+.commandLabel,
+.inputLabel,
+.outputLabel {
+    text-align: left;
+    margin-bottom: 10px;
+}
+
+.commandInput {
+    width: 400px;
+    min-height: 29px;
+}
+
+.inputBlock,
+.outputBlock {
+    display: flex;
+    flex-direction: column;
+}
+
+.inputArea,
+.outputArea {
+    width: 400px;
+    max-width: 400px;
+    min-height: 200px;
+    max-height: 800px;
+}

@@ -1,70 +1,20 @@
-# Getting Started with Create React App
+## Калькулятор
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+### Доступные команды:
 
-## Available Scripts
+<b>var \<id\></b> - объявление переменной
 
-In the project directory, you can run:
+<b>let \<id1\>=\<float\></b> либо <b>let \<id1\>=\<id2\></b> - присваивает переменной с именем \<id1\> числовое значение \<float\>, либо текущее значение ранее объявленной переменной с именем \<id2\>
 
-### `npm start`
+<b>fn \<id1\>=\<id2\></b> либо <b>fn \<id1\>=\<id2\>\<операция\>\<id3\></b> - объявляет новую функция с ранее необъявленным именем \<id1\>, значением которой будет либо значение идентификатора \<id2\>, либо результат применения одной из следующих бинарных операций к значениям ранее объявленных идентификаторов \<id2\> и \<id3\> в момент вычисления значения функции:
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+    1. Сложение:  <операция>=<+>
+    2. Вычитание: <операция>=<->
+    3. Умножение: <операция>=<*>
+    4. Деление:   <операция>=</>
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+<b>print \<id\></b> - выводит значение ранее объявленного идентификатора (для переменной - значение переменной, для функции - вычисленное значение функции) с точностью до двух знаков после запятой
 
-### `npm test`
+<b>printvars</b> - выводит имена и значения всех ранее объявленных переменных, отсортированных по алфавиту, в формате \<id\>:\<значение\> с точностью до двух знаков после запятой
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+<b>printfns</b> - выводит имена и значения всех ранее объявленных функций, отсортированных по алфавиту, в формате \<id\>:\<значение\> с точностью до двух знаков после запятой
