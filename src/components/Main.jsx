@@ -1,6 +1,6 @@
 import React, { useRef } from "react";
 import Calc from "../classes/Calc";
-import handleSubmit from "../functions/submitHandler";
+import { handleSubmit } from "../functions/submitHandler";
 import styles from "../styles/Main.module.scss";
 
 const Main = () => {
@@ -8,9 +8,9 @@ const Main = () => {
     const input = useRef();
     const output = useRef();
 
-    const text = new Calc(command);
+    const calc = new Calc(command);
 
-    const data = [command, input, output, text];
+    const data = [command, input, output, calc];
 
     return (
         <div className={styles.innerContent}>
@@ -19,7 +19,7 @@ const Main = () => {
                 <form
                     className={styles.commandBlock}
                     onSubmit={(e) => {
-                        handleSubmit([e, ...data]);
+                        handleSubmit(e, ...data);
                         command.current.value = "";
                     }}
                 >

@@ -16,8 +16,9 @@ export default class Calc {
     addValue(id, value) {
         if (!Number.isNaN(+value)) this[id] = value;
         else {
-            if (Object.keys(this).includes(value)) this[id] = this[value];
-            else return false;
+            if (Object.keys(this).includes(value)) {
+                typeof this[value] === "function" ? (this[id] = this[value]()) : (this[id] = this[value]);
+            } else return false;
         }
     }
 
@@ -25,32 +26,36 @@ export default class Calc {
         let operators = new RegExp(/[+\-*/]/);
         if (!operators.test(value)) {
             if (!Number.isNaN(+value)) {
-                this[id] = () => this.printValue(value);
+                this[id] = () => (+value).toFixed(2);
             } else {
                 if (Object.keys(this).includes(value)) {
-                    this[id] = () => this.printValue(this[value]);
+                    typeof this[value] === "function"
+                        ? (this[id] = () => this[value]())
+                        : (this[id] = () => (+this[value]).toFixed(2));
                 } else return false;
             }
         } else {
             let op = value.split(" ");
             this[id] = () =>
                 this.calcFuncValue(
-                    Object.keys(this).includes(op[0]) ? +this[op[0]] : +op[0],
+                    Object.keys(this).includes(op[0]) ? this[op[0]] : op[0],
                     op[1],
-                    Object.keys(this).includes(op[2]) ? +this[op[2]] : +op[2]
+                    Object.keys(this).includes(op[2]) ? this[op[2]] : op[2]
                 );
         }
     }
 
     printValue(id) {
-        if (typeof this[id] !== "function") return (+this[id]).toFixed(2);
+        return (+this[id]).toFixed(2);
     }
 
     printFunction(id) {
-        if (typeof this[id] === "function") return this[id]();
+        return this[id]();
     }
 
     calcFuncValue(arg1, op, arg2) {
-        return this._operations[op](arg1, arg2).toFixed(2);
+        if (typeof arg1 === "function") arg1 = arg1();
+        if (typeof arg2 === "function") arg2 = arg2();
+        return this._operations[op](+arg1, +arg2).toFixed(2);
     }
 }
