@@ -1,4 +1,4 @@
-export const setFn = ([op, input, output, calc]) => {
+export const setFn = (op, input, output, calc) => {
     const type = op.slice(0, 2);
     const entries = op.slice(3).split("=");
     const id = entries[0];

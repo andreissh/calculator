@@ -1,13 +1,11 @@
 .innerContent {
-    width: 1200px;
+    width: 80vw;
     margin: 100px auto;
 }
 
 .calcWrapper {
     display: flex;
     flex-direction: column;
-    width: 840px;
-    margin: 0 auto;
 }
 
 .commandBlock {
@@ -22,6 +20,7 @@
 
 .commandInputWrapper {
     display: flex;
+    flex-basis: 48%;
     flex-direction: column;
     margin-right: 40px;
 }
@@ -48,7 +47,6 @@
 }
 
 .commandInput {
-    width: 400px;
     min-height: 29px;
 }
 
@@ -56,12 +54,11 @@
 .outputBlock {
     display: flex;
     flex-direction: column;
+    flex-basis: 48%;
 }
 
 .inputArea,
 .outputArea {
-    width: 400px;
-    max-width: 400px;
+    resize: none;
     min-height: 200px;
-    max-height: 800px;
 }

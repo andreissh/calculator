@@ -1,4 +1,4 @@
-export const printValue = ([op, input, output, calc]) => {
+export const printValue = (op, input, output, calc) => {
     const type = op.slice(0, 5);
     const id = op.slice(6);
     calc._input = `${type} ${id}`;

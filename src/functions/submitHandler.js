@@ -12,17 +12,17 @@ export const handleSubmit = (e, command, input, output, calc) => {
     output.current.value = "";
 
     if (op.match(/^var [$a-zA-Z][$\w]*$/)) {
-        setVar(data);
+        setVar(...data);
     } else if (op.match(/^let [$a-zA-Z][$\w]*=([$_a-zA-Z][$\w]*|[0-9]+(\.[0-9]+)?)$/)) {
-        setValue(data);
+        setValue(...data);
     } else if (
         op.match(
             /^fn [$a-zA-Z][$\w]*=([$_a-zA-Z][$\w]*|[0-9]+(\.[0-9]+)?)([+\-*/]([$_a-zA-Z][$\w]*|[0-9]+(\.[0-9]+)?))?$/
         )
     ) {
-        setFn(data);
+        setFn(...data);
     } else if (op.match(/^print [$a-zA-Z][$\w]*$/)) {
-        printValue(data);
+        printValue(...data);
     } else if (op === "printvars") {
         printVars(output, calc);
     } else if (op === "printfns") {

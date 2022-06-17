@@ -1,4 +1,4 @@
-export const setValue = ([op, input, output, calc]) => {
+export const setValue = (op, input, output, calc) => {
     const type = op.slice(0, 3);
     const arr = op.slice(4).split("=");
     const [id, value] = arr;
